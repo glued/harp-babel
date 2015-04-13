@@ -1,6 +1,6 @@
 #harp-babel
 
-Harp boilerplate with gulp, babeljs & browserify for ES6+ friendly development.
+Harp boilerplate with gulp, babeljs & browserify for ES6+ friendly development with source maps.
 
 ####setup
 
