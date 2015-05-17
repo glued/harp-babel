@@ -23,5 +23,5 @@ gulp.task('babelIt', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('public/js/*.js', ['babelIt']);
+  gulp.watch(['public/js/*.js','public/js/**/*.js'], ['babelIt']);
 });
