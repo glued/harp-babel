@@ -31,6 +31,18 @@ gulp.task('compile', () => {
 	.pipe(gulp.dest('./public/build'));
 });
 
+gulp.task('prod:build', ['lint'], () => {
+	browserify('./public/_js/script.js', { debug: false })
+	.add(require.resolve('babel/polyfill'))
+	.transform(babelify.configure())
+	.bundle()
+	.on('error', util.log.bind(util, 'Browserify Error'))
+	.pipe(source('script.js'))
+	.pipe(buffer())
+	.pipe(uglify())
+	.pipe(gulp.dest('./public/build'));
+});
+
 gulp.task('lint', () => {
 	return gulp.src('public/_js/**/*.js')
   .pipe($.plumber())
