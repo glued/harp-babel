@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0,
+    "quotes": [1, "single"],
+    "no-multi-spaces": false,
+    "no-unexpected-multiline": false,
+    "curly": false,
+    "consistent-return": false,
+    "no-underscore-dangle": false,
+    "no-console":false,
+    "no-unused-vars":false
+  },
+  "env": {
+    "browser": true,
+    "node": false
+  },
+  "globals": {
+  }
+}
