@@ -6,10 +6,11 @@ Harp boilerplate with gulp, babeljs & browserify for ES6+ friendly development.
 
 	harp init -b glued/harp-babel
 	npm install
-	
+
 ###Run
-	
-	npm start
+	gulp watch and harp compile
+
+	or modify the gulpfile to combine the two
 
 ##Libs
 
