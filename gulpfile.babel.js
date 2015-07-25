@@ -20,7 +20,7 @@ function jscsNotify(file) {
 gulp.task('compile', () => {
 	browserify('./public/_js/script.js', { debug: true })
 	.add(require.resolve('babel/polyfill'))
-	.transform(babelify.configure({ optional: ['es7.asyncFunctions','spec.protoToAssign']}))
+	.transform(babelify.configure()) // babelify.configure({ optional: ['es7.asyncFunctions','spec.protoToAssign']})
 	.bundle()
 	.on('error', util.log.bind(util, 'Browserify Error'))
 	.pipe(source('script.js'))
