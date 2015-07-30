@@ -12,5 +12,6 @@
   "requireSpaceBeforeBlockStatements":null,
   "requireDotNotation": null,
   "requireLineFeedAtFileEnd": null,
-  "disallowQuotedKeysInObjects": null
+  "disallowQuotedKeysInObjects": null,
+  "requireTrailingComma" : null
 }
