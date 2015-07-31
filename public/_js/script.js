@@ -1,3 +1,5 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-	console.log('script loaded');
-});
+function init(){
+		//LETS DO THIS!
+}
+
+document.addEventListener('DOMContentLoaded', init, 0);
