@@ -16,6 +16,8 @@ www
 # BABELJS BUILDS
 public/build
 
+www
+
 # Dependency directory
 node_modules
 

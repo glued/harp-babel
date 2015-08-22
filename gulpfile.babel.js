@@ -9,6 +9,7 @@ import source     from 'vinyl-source-stream';
 import uglify     from 'gulp-uglify';
 import sourcemaps from 'gulp-sourcemaps';
 import plugins    from 'gulp-load-plugins';
+import collapse   from 'bundle-collapser/plugin';
 
 const $ = plugins();
 
@@ -32,14 +33,18 @@ gulp.task('compile', () => {
 });
 
 gulp.task('prod:build', ['lint'], () => {
-	browserify('./public/_js/script.js', { debug: false })
+	browserify('./public/_js/script.js', { debug: false, fullPaths: false })
 	.add(require.resolve('babel/polyfill'))
-	.transform(babelify.configure())
+	.transform(babelify.configure({compact:true,  optional: ['minification.removeConsole']}))
+	.plugin(collapse)
 	.bundle()
 	.on('error', util.log.bind(util, 'Browserify Error'))
 	.pipe(source('script.js'))
 	.pipe(buffer())
-	.pipe(uglify())
+	.pipe(uglify({
+      mangle:true,
+      compress:true
+    }))
 	.pipe(gulp.dest('./public/build'));
 });
 
