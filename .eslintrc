@@ -3,13 +3,13 @@
   "rules": {
     "strict": 0,
     "quotes": [1, "single"],
-    "no-multi-spaces": false,
-    "no-unexpected-multiline": false,
-    "curly": false,
-    "consistent-return": false,
-    "no-underscore-dangle": false,
-    "no-console":false,
-    "no-unused-vars":false
+    "no-multi-spaces": 0,
+    "no-unexpected-multiline": 0,
+    "curly": 0,
+    "consistent-return": 0,
+    "no-underscore-dangle": 0,
+    "no-console":0,
+    "no-unused-vars":0
   },
   "env": {
     "browser": true,
