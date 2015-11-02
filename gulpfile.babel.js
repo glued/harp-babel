@@ -13,15 +13,10 @@ import collapse   from 'bundle-collapser/plugin';
 
 const $ = plugins();
 
-function jscsNotify(file) {
-	if (!file.jscs) { return; }
-	return file.jscs.success ? false : 'JSRC failed';
-}
-
 gulp.task('compile', () => {
 	browserify('./public/_js/script.js', { debug: true })
-	.add(require.resolve('babel/polyfill'))
-	.transform(babelify.configure()) // babelify.configure({ optional: ['es7.asyncFunctions','spec.protoToAssign']})
+	.add(require.resolve('babel-polyfill'))
+	.transform(babelify.configure({presets: ["es2015"]}))
 	.bundle()
 	.on('error', util.log.bind(util, 'Browserify Error'))
 	.pipe(source('script.js'))
@@ -34,8 +29,8 @@ gulp.task('compile', () => {
 
 gulp.task('prod:build', ['lint'], () => {
 	browserify('./public/_js/script.js', { debug: false, fullPaths: false })
-	.add(require.resolve('babel/polyfill'))
-	.transform(babelify.configure({compact:true,  optional: ['minification.removeConsole']}))
+	.add(require.resolve('babel-polyfill'))
+	.transform(babelify.configure({compact:true})) //,  optional: ['minification.removeConsole']
 	.plugin(collapse)
 	.bundle()
 	.on('error', util.log.bind(util, 'Browserify Error'))
@@ -55,7 +50,7 @@ gulp.task('lint', () => {
   .pipe($.eslint.format())
   .pipe($.eslint.failOnError())
   .pipe($.jscs())
-  .pipe($.notify(jscsNotify));
+  // .pipe($.notify(jscsNotify));
 });
 
 gulp.task('watch', () => {
