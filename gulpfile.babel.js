@@ -16,7 +16,7 @@ const $ = plugins();
 gulp.task('compile', () => {
 	browserify('./public/_js/script.js', { debug: true })
 	.add(require.resolve('babel-polyfill'))
-	.transform(babelify.configure({presets: ["es2015"]}))
+	.transform(babelify.configure({presets: ['es2015']}))
 	.bundle()
 	.on('error', util.log.bind(util, 'Browserify Error'))
 	.pipe(source('script.js'))
@@ -30,7 +30,7 @@ gulp.task('compile', () => {
 gulp.task('prod:build', ['lint'], () => {
 	browserify('./public/_js/script.js', { debug: false, fullPaths: false })
 	.add(require.resolve('babel-polyfill'))
-	.transform(babelify.configure({compact:true})) //,  optional: ['minification.removeConsole']
+	.transform(babelify.configure({compact:true, presets: ['es2015']})) //,  optional: ['minification.removeConsole']
 	.plugin(collapse)
 	.bundle()
 	.on('error', util.log.bind(util, 'Browserify Error'))
