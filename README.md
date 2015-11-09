@@ -17,11 +17,10 @@ Run for development
 
 Run for production
 `npm run prod`
+
 In production, the javascript is minified and sourcemaps are removed.
-<<<<<<< HEAD
 This will also lint your code using ESLint and JSCSrc
-=======
->>>>>>> origin/master
+
 
 These commands are defined in package.json
 
@@ -38,7 +37,6 @@ Babel is a compiler for writing next generation JavaScript
 
 [https://babeljs.io/](https://babeljs.io/)
 [https://github.com/babel/babel](https://github.com/babel/babel)
-<<<<<<< HEAD
 
 ####Webpack
 [https://github.com/webpack/webpack](https://github.com/webpack/webpack)
@@ -52,5 +50,3 @@ ESLint is a tool for identifying and reporting on patterns found in ECMAScript/J
 JSCS is a code style linter for programmatically enforcing your style guide.
 [https://github.com/jscs-dev/node-jscs](https://github.com/jscs-dev/node-jscs)
 [https://github.com/jscs-dev/babel-jscs](https://github.com/jscs-dev/babel-jscs)
-=======
->>>>>>> origin/master
