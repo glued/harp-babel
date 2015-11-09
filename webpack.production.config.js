@@ -16,9 +16,11 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel',
+                exclude: /node_modules/,
                 query: {
                     cacheDirectory: true,
-                    presets: ['es2015']
+                    presets: ['es2015'],
+                    plugins: ['transform-remove-console']
                 }
             },
         ],
