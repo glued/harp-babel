@@ -1,11 +1,11 @@
 {
   "name": "harp-babel",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A harp boilerplate with babel / es6+",
   "main": "app.js",
   "scripts": {
     "dev": "webpack --progress --colors --watch",
-    "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js"
+    "prod": "webpack -p --config webpack.production.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,16 +18,16 @@
   },
   "homepage": "https://github.com/glued/harp-babel",
   "devDependencies": {
-    "babel-core": "^6.1.2",
-    "babel-eslint": "^4.1.3",
-    "babel-loader": "^6.0.0",
-    "babel-preset-es2015": "^6.0.15",
+    "babel-core": "^6.4.0",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-loader": "^6.2.1",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
     "harp": "^0.20.0",
     "babel-jscs": "^2.0.0",
     "babel-plugin-transform-remove-console": "^6.0.14",
-    "babel-polyfill": "^6.0.14",
-    "eslint": "^1.8.0",
-    "eslint-loader": "^1.1.1",
+    "eslint": "^1.10.3",
+    "eslint-loader": "^1.2.0",
     "jscs": "^2.3.5",
     "jscs-loader": "^0.2.0",
     "webpack": "^1.12.2"
