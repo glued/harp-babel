@@ -1,7 +1,9 @@
-var webpack = require('webpack');
+/*eslint-env node */
+'use strict';
+const webpack = require('webpack');
 
 module.exports = {
-    entry: ['babel-polyfill','./public/_js/script.js'],
+    entry: ['babel-polyfill', './public/_js/script.js'],
     output: {
         path: __dirname,
         filename: './public/build/script.js'
@@ -13,7 +15,7 @@ module.exports = {
                 loader: 'babel',
                 query: {
                     cacheDirectory: true,
-                    presets: ['es2015']
+                    presets: ['es2015', 'stage-0']
                 }
             }
         ],
@@ -24,6 +26,5 @@ module.exports = {
     stats: {
         colors: true
     },
-    devtool: 'source-map',   // Create Sourcemaps for the bundle
-
+    devtool: 'source-map'
 };

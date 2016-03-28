@@ -1,52 +1,45 @@
-#harp-babel
+[Surge]:https://surge.sh
+[Harp]:http://harpjs.com/
+[Atom]:https://atom.io/
+[Babel]:http://babeljs.io
+[webpack]:https://webpack.github.io/
 
-Harp boilerplate with babeljs and webpack for ES6+ friendly development.
+# harp-babel
 
-*important*
-Gulp has been removed from this project, webpack is significantly faster at compiling Babel.
-See this branch for how to use it with [gulp](https://github.com/glued/harp-babel/tree/babel-gulp-v6)
+[Harp] boilerplate with [Babel] and [webpack] for ES6+ friendly development.
 
-##setup
+
+I also have a new [Atom package](https://github.com/glued/harpy) which make using harp a snap with atom.
+
+### Setup
+You must have [Harp] installed globally first `npm install harp -g`
+
+then pick any directory and run the following from the terminal / command prompt
 
 	harp init -b glued/harp-babel
 	npm install
 
-###Run
+
+### Run webpack
 Run for development
-`npm run dev`
+```
+npm run dev
+```
+Run for production (OSX)
+```
+npm run prod
+```
 
-Run for production
-`npm run prod`
+Run for production (Windows)
+```
+npm run win-prod
+```
 
+Deploy to [Surge]
+```
+npm run deploy
+```
 In production, the javascript is minified and sourcemaps are removed.
 This will also lint your code using ESLint and JSCSrc
 
-
 These commands are defined in package.json
-
-##Libs
-
-####Harp
-Static Site Server/Generator with built-in preprocessing ( Jade, less, etc )
-
-[http://harpjs.com/](http://harpjs.com/)
-[https://github.com/sintaxi/harp](https://github.com/sintaxi/harp)
-
-####Babel
-Babel is a compiler for writing next generation JavaScript
-
-[https://babeljs.io/](https://babeljs.io/)
-[https://github.com/babel/babel](https://github.com/babel/babel)
-
-####Webpack
-[https://github.com/webpack/webpack](https://github.com/webpack/webpack)
-
-####Eslint
-ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
-[https://github.com/eslint/eslint](https://github.com/eslint/eslint)
-[https://github.com/babel/babel-eslint](https://github.com/babel/babel-eslint)
-
-###JSCSrc
-JSCS is a code style linter for programmatically enforcing your style guide.
-[https://github.com/jscs-dev/node-jscs](https://github.com/jscs-dev/node-jscs)
-[https://github.com/jscs-dev/babel-jscs](https://github.com/jscs-dev/babel-jscs)

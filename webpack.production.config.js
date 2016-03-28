@@ -1,4 +1,6 @@
-var webpack = require('webpack');
+/*eslint-env node */
+'use strict';
+const webpack = require('webpack');
 
 module.exports = {
     entry: ['babel-polyfill', './public/_js/script.js'],
@@ -8,31 +10,29 @@ module.exports = {
     },
     module: {
         preLoaders: [
-          {test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/},
-          {test: /\.js$/, loader: 'jscs-loader', exclude: /node_modules/},
+          { test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/ },
+          { test: /\.js$/, loader: 'jscs-loader', exclude: /node_modules/ },
         ],
         loaders: [
             {
                 test: /\.js$/,
                 loader: 'babel',
-                exclude: /node_modules/,
                 query: {
                     cacheDirectory: true,
-                    presets: ['es2015'],
+                    presets: ['es2015', 'stage-0'],
                     plugins: ['transform-remove-console']
                 }
             },
         ],
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-           compressor: {
-             warnings: false
-           }
-        }),
-        new webpack.NoErrorsPlugin()
+      new webpack.DefinePlugin({ 'PROD_ENV': true }),
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.UglifyJsPlugin({
+         compressor: { warnings: false }
+      }),
+      new webpack.NoErrorsPlugin()
     ],
-    stats: {
-        colors: true
-    }
+    stats: { colors: true }
 };

@@ -1,7 +1,14 @@
 {
   "parser": "babel-eslint",
+  "plugins": [
+    "flow-vars"
+  ],
   "rules": {
     "strict": 0,
+    "flow-vars/define-flow-type": 1,
+    "no-unused-vars":[2, {"vars": "local"}],
+    "flow-vars/use-flow-type": 1,
+    "no-undef":1,
     "quotes": [1, "single"],
     "no-multi-spaces": 0,
     "no-unexpected-multiline": 0,
@@ -11,8 +18,8 @@
     "no-console":0
   },
   "env": {
-    "browser": true,
-    "node": false
+    "es6": true,
+    "browser": true
   },
   "globals": {
   }
