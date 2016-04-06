@@ -31,8 +31,7 @@ module.exports = {
       new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({
          compressor: { warnings: false }
-      }),
-      new webpack.NoErrorsPlugin()
+      })
     ],
     stats: { colors: true }
 };
