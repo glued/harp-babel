@@ -1,8 +1,8 @@
 {
-	"globals": {
-		"meta" :{
-			"title" : "title of site",
-			"desc"	: "description stuff"
-		}
-	}
+  "globals": {
+    "meta" :{
+      "title" : "title of site",
+      "desc"  : "description of site"
+    }
+  }
 }

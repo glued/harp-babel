@@ -16,8 +16,8 @@ You must have [Harp] installed globally first `npm install harp -g`
 
 then pick any directory and run the following from the terminal / command prompt
 
-	harp init -b glued/harp-babel
-	npm install
+  harp init -b glued/harp-babel
+  npm install
 
 
 ### Run webpack

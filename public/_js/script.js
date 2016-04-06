@@ -1,6 +1,6 @@
 function init(){
-		//LETS DO THIS!
+    //LETS DO THIS!
     console.log('test');
 }
 
-document.addEventListener('DOMContentLoaded', init, 0);
+document.addEventListener('DOMContentLoaded', init, false);
