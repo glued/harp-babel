@@ -13,6 +13,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel',
+                exclude:/node_modules/,
                 query: {
                     cacheDirectory: true,
                     presets: ['es2015', 'stage-0']
