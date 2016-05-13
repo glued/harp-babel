@@ -7,7 +7,7 @@
     "dev": "webpack --progress --colors --watch",
     "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js",
     "win-prod": "set NODE_ENV=production && webpack -p --config webpack.production.config.js",
-    "deploy": "npm run prod && surge --build -p ./"
+    "deploy": "npm run prod && harp compile && surge ./www"
   },
   "repository": {
     "type": "git",
